@@ -1,20 +1,18 @@
 # 🚀 Build Your Idea in 1 Hour — AI Workshop Starter
 
-> Bring an idea. Customize this template with Claude. Ship a working app tonight.
+> Bring an idea. Build it with Claude Code. Ship a working app tonight.
 
-A starter template from the **AI Build Workshop** by SafeScreens Initiative — adaptable to *any* idea you bring.
+A starter from the **AI Build Workshop** by SafeScreens Initiative. Customize this empty shell into anything — habit tracker, family game, study tool, journal — with the help of Claude Code in your terminal.
 
 ---
 
-## 👋 What is this?
+## 👋 What this is
 
-A blank-slate web app starter, structured so you can build **anything** in one hour with Claude:
+A blank-slate web app. Same starter for any idea you bring:
 
-- A personal habit tracker
+- A daily habit tracker
 - A family chore wheel
-- A daily journal
 - A kids' story generator
-- A recipe finder
 - A budget tool
 - A study quiz
 - ...whatever you bring
@@ -23,14 +21,60 @@ The structure is the same; **your idea makes it yours**.
 
 ---
 
-## 🎬 How tonight works
+## 🛠 Tonight's setup (15 min walkthrough, Kemal helps live)
 
-1. **You already have this repo** — Kemal created it for you and added you as a collaborator
-2. **Open [`PROMPTS.md`](./PROMPTS.md)** — it contains 6 numbered prompts you'll paste into Claude one at a time
-3. **Open [claude.ai](https://claude.ai)** in a new browser tab
-4. **Work through the prompts** — by step 4 you'll have a working app, by step 6 it'll be polished
-5. **Save your final HTML** — replace this repo's `index.html` with what Claude gave you, then commit
-6. **Kemal deploys it tonight** to `https://buildschool-{your-name}.pages.dev` — you'll get the link by email
+Pick **one** path. Codespaces is easier if you've never used a terminal.
+
+### 🌐 Path A — GitHub Codespaces (recommended, no local install)
+
+1. **Go to your repo on GitHub** (Kemal sent you the link)
+2. Click the green **`<> Code`** button → tab **`Codespaces`** → **`Create codespace on main`**
+3. Wait 1-2 minutes — a full coding environment opens in your browser
+4. In the terminal at the bottom, paste:
+
+   ```bash
+   npm install -g @anthropic-ai/claude-code
+   ```
+
+5. Then start Claude Code:
+
+   ```bash
+   claude
+   ```
+
+6. **Log in when prompted** with your Claude account
+7. You're ready — jump to [PROMPTS.md](./PROMPTS.md)
+
+### 💻 Path B — Local Claude Code (if you already use a terminal)
+
+1. **Install Node.js** from [nodejs.org](https://nodejs.org) (LTS version)
+2. **Install Claude Code:**
+
+   ```bash
+   npm install -g @anthropic-ai/claude-code
+   ```
+
+3. **Install GitHub CLI** from [cli.github.com](https://cli.github.com)
+4. **Authenticate GitHub:**
+
+   ```bash
+   gh auth login
+   ```
+
+5. **Clone your repo** (replace `your-name` with what Kemal gave you):
+
+   ```bash
+   git clone https://github.com/profkemalaydin/buildschool-your-name.git
+   cd buildschool-your-name
+   ```
+
+6. **Start Claude Code:**
+
+   ```bash
+   claude
+   ```
+
+7. Log in when prompted — you're ready. Jump to [PROMPTS.md](./PROMPTS.md)
 
 ---
 
@@ -40,40 +84,46 @@ It takes 2 minutes:
 
 1. Go to **[github.com/signup](https://github.com/signup)**
 2. Use any email (gmail works fine)
-3. Pick a username — this becomes part of your account's URL. Choose something you like.
+3. Pick a username — choose something you like, it becomes part of your URL
 4. Verify your email
-5. **Tell Kemal your username** in the workshop chat — he'll add you as a collaborator on a fresh copy of this template
+5. **Tell Kemal your username in the Meet chat** — he'll create your repo and add you as a collaborator (so you can push changes; Kemal will deploy)
 
 ---
 
-## ✏️ How to update your repo with your final HTML
+## 🎬 The workflow tonight
 
-Easiest way (no command line):
-
-1. Open your repo on GitHub
-2. Click on `index.html`
-3. Click the **pencil icon** (top-right) to edit
-4. **Select all** existing content, **delete** it
-5. **Paste** the final HTML Claude gave you
-6. Scroll down → write a small message like *"my first version"* → click **Commit changes**
-7. Done — Kemal will see it and deploy
+1. You and Kemal are **both collaborators** on this repo. You push changes; Kemal handles deploy.
+2. Claude Code is running in your repo's folder — it can **directly read and edit your files** as you talk to it.
+3. Open [PROMPTS.md](./PROMPTS.md) — type each prompt into Claude Code, in order.
+4. By Step 4 you'll have a working app. By Step 6 it's polished.
+5. When you're happy: tell Claude Code *"Commit and push my changes"* — it does it.
+6. **Kemal sees your push and deploys** to `https://buildschool-yourname.pages.dev` within a few hours.
 
 ---
 
-## 🔁 Want to build another idea after the workshop?
+## ✏️ When Claude Code is done — push your work
 
-Click the green **"Use this template"** button at the top of the repo page (or any of the workshop template repos under [@profkemalaydin](https://github.com/profkemalaydin)). That creates a brand-new repo on your account with this same starter. You can keep building independently.
+In Claude Code, just type:
+
+```
+Commit my changes with message "my v1" and push to main.
+```
+
+Claude Code handles the git commit + push for you.
+
+You can also do it manually if you prefer:
+
+```bash
+git add .
+git commit -m "my v1"
+git push
+```
 
 ---
 
-## 🛠 What's in this starter
+## 🔁 After the workshop — build another idea
 
-- `index.html` — a working "hello, your app" page with Tailwind CSS pre-wired, mobile-first layout, and helper functions ready to use
-- `PROMPTS.md` — the 6-step Claude conversation guide
-- `LICENSE` — MIT (do whatever you want with it)
-- `.github/` — no workflows, intentionally clean
-
-The starter is **deliberately minimal** so Claude has room to make it yours.
+Click the green **`Use this template`** button at the top of [workshop-starter](https://github.com/profkemalaydin/workshop-starter). That creates a brand-new repo on your account with this same starter. You can keep building independently — no need for Kemal.
 
 ---
 
@@ -82,8 +132,20 @@ The starter is **deliberately minimal** so Claude has room to make it yours.
 You have **3 layers of help**:
 
 1. **The prompts themselves** — they're written to anticipate where you might get stuck
-2. **Workshop AI Coach** — open a *second* Claude chat, paste the Coach prompt Kemal shared in Meet. That second Claude knows the workshop structure and can guide you in 2 minutes
-3. **Type `@Kemal acil` in the Meet chat** — Kemal will jump into your screen-share and help personally
+2. **Workshop AI Coach** — open a *second* Claude chat in the browser, paste the Coach prompt Kemal shared. That second Claude knows the workshop structure and helps in 2 minutes
+3. **Type `@Kemal acil` in the Meet chat** — Kemal jumps into your screen-share and helps personally
+
+---
+
+## 📦 What's in this starter
+
+| File | Purpose |
+|---|---|
+| `index.html` | Working "hello, your app" page with Tailwind CSS pre-wired, localStorage helpers ready |
+| `PROMPTS.md` | The 6-step Claude Code conversation guide |
+| `LICENSE` | MIT — yours to keep |
+
+The starter is **deliberately minimal** so Claude has room to make it yours.
 
 ---
 

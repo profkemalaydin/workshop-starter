@@ -21,9 +21,42 @@ The structure is the same; **your idea makes it yours**.
 
 ---
 
-## 🛠 Setup — Install Claude Code on your machine (15-20 min)
+## ✅ Before tonight — 3 things (10 min total)
 
-Pick your operating system. Each path ends the same way: Claude Code running in your repo folder.
+Do these **before the workshop starts** so the live session can focus on building, not configuring:
+
+### 1. Get a GitHub account (2 min)
+
+Skip if you already have one. Otherwise:
+
+1. Go to **[github.com/signup](https://github.com/signup)**
+2. Use any email (gmail works fine)
+3. Pick a username — choose something you like, it becomes part of your URL
+4. Verify your email
+
+### 2. Send your GitHub username to Kemal (1 min)
+
+Send via WhatsApp or in the workshop Meet chat: **"My GitHub username is `your-username`"**.
+
+Kemal will use it to:
+- Create your personal repo at `github.com/profkemalaydin/buildschool-yourname`
+- Add you as a **collaborator** with push access (so you can save your changes)
+
+### 3. Accept the collaboration invitation (1 min)
+
+After Kemal creates your repo, you'll get a **GitHub email** with a "View invitation" button — click it and accept. Without this, you can't push code to your repo.
+
+You can also accept directly at: **[github.com/notifications](https://github.com/notifications)**
+
+✅ Done — you're set up before the live session even starts.
+
+---
+
+## 🛠 Setup tonight — Install Claude Code (15-20 min, Kemal walks through live)
+
+We'll do this together in the first 20 minutes of the workshop. Don't worry about doing it perfectly alone — Kemal screen-shares and helps.
+
+Pick your operating system. All paths end the same way: Claude Code running in your repo folder.
 
 ### 🍎 macOS
 
@@ -54,7 +87,7 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
 
    Choose: GitHub.com → HTTPS → Yes → Login with browser.
 
-6. **Clone your repo** (Kemal will send you the URL — replace `your-name`):
+6. **Clone your repo** (replace `your-name` with the slug Kemal gave you — only works after you've accepted the invitation from "Before tonight" step 3):
 
    ```bash
    git clone https://github.com/profkemalaydin/buildschool-your-name.git
@@ -91,7 +124,7 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
 
    Choose: GitHub.com → HTTPS → Yes → Login with browser.
 
-7. **Clone your repo** (replace `your-name` with what Kemal gave you):
+7. **Clone your repo** (replace `your-name` with the slug Kemal gave you — only works after you've accepted the invitation from "Before tonight" step 3):
 
    ```powershell
    git clone https://github.com/profkemalaydin/buildschool-your-name.git
@@ -140,7 +173,7 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
 
    Choose: GitHub.com → HTTPS → Yes → Login with browser.
 
-6. **Clone your repo** (replace `your-name`):
+6. **Clone your repo** (replace `your-name` with the slug Kemal gave you — only works after you've accepted the invitation from "Before tonight" step 3):
 
    ```bash
    git clone https://github.com/profkemalaydin/buildschool-your-name.git
@@ -157,21 +190,9 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
 
 ---
 
-## 🆕 No GitHub account yet?
-
-It takes 2 minutes:
-
-1. Go to **[github.com/signup](https://github.com/signup)**
-2. Use any email (gmail works fine)
-3. Pick a username — choose something you like, it becomes part of your URL
-4. Verify your email
-5. **Tell Kemal your username in the Meet chat** — he'll create your repo and add you as a collaborator so you can push changes
-
----
-
 ## 🎬 The workflow tonight
 
-1. **You and Kemal are both collaborators** on this repo. You push changes; Kemal handles the Cloudflare deploy.
+1. **You and Kemal are both collaborators** on your repo. You push changes; Kemal handles the Cloudflare deploy.
 2. **Claude Code runs in your repo's folder** — it can directly read and edit your files as you talk to it.
 3. **Open [PROMPTS.md](./PROMPTS.md)** — paste each prompt into Claude Code, in order.
 4. **By Step 4** you'll have a working app. **By Step 6** it's polished.

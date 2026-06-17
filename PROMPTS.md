@@ -18,8 +18,7 @@ Here's my idea in one sentence:
 > [YOUR ONE SENTENCE IDEA — example:
 >  "A daily prayer + gratitude tracker for my mom who is 65 and not super techy."]
 
-Before we start, look at the existing index.html so you know the starting
-point, then ask me 3 quick questions to understand my idea deeper:
+Before we start, ask me 3 quick questions to understand my idea deeper:
 1. Who exactly will use this? (be specific — name, age, comfort with tech)
 2. What's the ONE thing this app should do best?
 3. What would make this person smile when they open it?

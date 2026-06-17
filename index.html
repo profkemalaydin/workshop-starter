@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your App — Build Your Idea in 1 Hour</title>
+  <meta name="description" content="A starter from the AI Build Workshop. Customize with Claude, ship in an hour." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .glass {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-50 via-rose-50 to-amber-50 text-slate-900">
+  <main class="min-h-screen flex items-center justify-center p-4 sm:p-8">
+    <div class="glass max-w-md w-full rounded-3xl p-8 sm:p-10 text-center shadow-xl">
+      <p class="text-xs uppercase tracking-[0.2em] text-slate-500 font-semibold mb-3">AI Build Workshop</p>
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4">Your app starts here ✨</h1>
+      <p class="text-slate-600 leading-relaxed mb-6">
+        This is your blank canvas. Open <a class="underline font-semibold text-slate-900" href="https://github.com/profkemalaydin">PROMPTS.md</a>,
+        head to <a class="underline font-semibold text-slate-900" href="https://claude.ai">claude.ai</a>, and
+        work through the 6 steps. In about an hour, this page will be your idea.
+      </p>
+      <button id="tap" class="bg-slate-900 text-white font-semibold px-6 py-3 rounded-full hover:bg-slate-800 active:scale-95 transition">
+        Tap to test it works
+      </button>
+      <p id="msg" class="text-xs text-slate-500 mt-4 h-4"></p>
+    </div>
+  </main>
+
+  <script>
+    // ────────────────────────────────────────────────────────────────
+    // Tiny helpers — yours to use, ignore, or replace.
+    // localStorage save/load wrappers, ready when Claude builds with them.
+    // ────────────────────────────────────────────────────────────────
+    const store = {
+      get(key, fallback = null) {
+        try { return JSON.parse(localStorage.getItem(key)) ?? fallback; }
+        catch { return fallback; }
+      },
+      set(key, value) { localStorage.setItem(key, JSON.stringify(value)); },
+      clear(key) { localStorage.removeItem(key); },
+    };
+
+    // Demo: tap counter persists across reloads
+    const count = store.get('demo_taps', 0);
+    const tap = document.getElementById('tap');
+    const msg = document.getElementById('msg');
+    if (count > 0) msg.textContent = `You've tapped ${count} time${count === 1 ? '' : 's'} so far.`;
+
+    tap.addEventListener('click', () => {
+      const next = (store.get('demo_taps', 0)) + 1;
+      store.set('demo_taps', next);
+      msg.textContent = `Tap ${next}. Saved. (Reload — it'll remember.)`;
+      tap.classList.add('scale-110');
+      setTimeout(() => tap.classList.remove('scale-110'), 150);
+    });
+  </script>
+</body>
+</html>

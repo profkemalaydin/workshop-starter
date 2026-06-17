@@ -34,13 +34,21 @@ Skip if you already have one. Otherwise:
 3. Pick a username — choose something you like, it becomes part of your URL
 4. Verify your email
 
-### 2. Send your GitHub username to Kemal (1 min)
+### 2. Add yourself to the workshop sign-up sheet (1 min)
 
-Send via WhatsApp or in the workshop Meet chat: **"My GitHub username is `your-username`"**.
+Open this Google Sheet (anyone with the link can edit — no sign-in needed):
 
-Kemal will use it to:
+**👉 [Workshop sign-up sheet](https://docs.google.com/spreadsheets/d/1lVzVVg_3B4jm5zGTbv3aS50Frn4lhhhoCe8NXc-hxaY/edit)**
+
+Add a row with:
+- **Your name**
+- **Your GitHub username**
+- **One-sentence app idea** (it's okay if it changes — just write whatever you have now)
+
+Once your row is there, Kemal will:
 - Create your personal repo at `github.com/profkemalaydin/buildschool-yourname`
 - Add you as a **collaborator** with push access (so you can save your changes)
+- Fill in the **Repo URL** column on the sheet — that's the link you'll clone later
 
 ### 3. Accept the collaboration invitation (1 min)
 

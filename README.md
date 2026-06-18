@@ -4,7 +4,27 @@
 
 A starter from the **AI Build Workshop** by SafeScreens Initiative. Customize this empty shell into anything — habit tracker, family game, study tool, journal — with the help of Claude Code in your terminal.
 
-> 💛 **Don't worry if something fails during setup.** The goal isn't to finish alone — it's to get everyone into the repo and run Claude Code together. Kemal screen-shares every step and unblocks you live.
+---
+
+> ## ⚠️ Heads-up before you start
+>
+> Tonight's workshop uses **Claude Code**, which requires a **Claude Pro, Max, Team, Enterprise, or Console account** (Pro is $20/month).
+> **The free Claude.ai plan does not include Claude Code.**
+> → [Check or upgrade your plan](https://claude.ai/settings/billing) before tonight.
+>
+> *If you can't upgrade right now, you can still attend — just use [claude.ai](https://claude.ai) web (Artifacts) as Plan B. The workflow is similar; you copy-paste HTML instead of editing files directly.*
+
+---
+
+## 📑 Contents
+
+- [✅ Before tonight](#-before-tonight--6-things-10-min-total) — 6 quick things to do before the workshop starts
+- [🛠 Setup tonight](#-setup-tonight--install-claude-code-15-20-min-kemal-walks-through-live) — install Claude Code (Mac / Windows / Linux)
+- [⚠️ Common setup issues](#%EF%B8%8F-common-setup-issues--quick-fixes)
+- [🎬 The workflow tonight](#-the-workflow-tonight)
+- [🆘 Stuck during the build?](#-stuck-during-the-build)
+
+**If you only read one section: → [Before tonight](#-before-tonight--6-things-10-min-total).**
 
 ---
 
@@ -25,14 +45,16 @@ The structure is the same; **your idea makes it yours**.
 
 ## ✅ Before tonight — 6 things (10 min total)
 
-Knock these out before the workshop starts so the live session can focus on building, not configuring:
+Knock these out before the workshop starts so the live session can focus on building, not configuring.
 
 1. **Create or confirm your GitHub account** — [github.com/signup](https://github.com/signup) (2 min if you don't have one)
 2. **Add yourself to the workshop sign-up sheet** — name + GitHub username + one-sentence idea → **[Workshop sign-up sheet](https://docs.google.com/spreadsheets/d/1lVzVVg_3B4jm5zGTbv3aS50Frn4lhhhoCe8NXc-hxaY/edit)**
-3. **Accept the GitHub repository invitation** Kemal will send to your email (the repo is `github.com/profkemalaydin/buildschool-yourname`). Without accepting, you can't push code.
-4. **Create or confirm a Claude account** that has Claude Code access. **Claude Code requires Pro, Max, Team, Enterprise, or Console** — the free Claude.ai plan does **not** include Claude Code. Check or upgrade at [claude.ai](https://claude.ai).
-5. **Bring your laptop charger** — an hour of build + AI streaming drains a battery fast.
-6. **Use Chrome or another modern browser** — for the GitHub login flow and Claude streaming UI.
+3. **Accept the GitHub repository invitation** Kemal sends to your email. He creates `github.com/profkemalaydin/buildschool-yourname` right after he sees your row on the sheet — usually a few minutes. *Your slug is your first name in lowercase: if you signed up as "Sara", your repo is `buildschool-sara`.*
+4. **Confirm a Claude Pro account** (see the ⚠️ note at the top of this README)
+5. **Bring your laptop charger + ~2 GB of free disk space** — an hour of build + streaming drains a battery fast; Claude Code, Git, and a Node install combined take ~1.5 GB
+6. **Use Chrome or another modern browser** — for the GitHub login flow and Claude streaming UI
+
+> 💛 **Don't worry if something fails during setup.** The goal isn't to finish alone — it's to get everyone into the repo and run Claude Code together. Kemal screen-shares every step and unblocks you live.
 
 ---
 
@@ -40,32 +62,36 @@ Knock these out before the workshop starts so the live session can focus on buil
 
 Pick your operating system. Each path ends the same way: Claude Code running in your repo folder.
 
-> Anthropic's recommended path for Claude Code is the **native installer** — much cleaner than npm. We'll use that below.
+> Anthropic's recommended path for Claude Code is the **native installer** — much cleaner than npm. The commands below pipe a remote installer script into your shell — this is the **same one Anthropic publishes** in their official docs.
 
 ---
 
 ### 🍎 macOS
 
 1. Open **Terminal** (Cmd+Space → "Terminal" → Enter)
-2. **Install Homebrew** (skip if you already have it):
+2. **Check if you already have Git + GitHub CLI:**
 
    ```bash
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   git --version
+   gh --version
    ```
 
-3. **Install Git + GitHub CLI** (Node.js is optional — only needed for our project later):
+   Both already there? Skip to step 4. Missing either? Install via Homebrew:
 
    ```bash
+   # Install Homebrew first if you don't have it:
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   # Then:
    brew install git gh
    ```
 
-4. **Install Claude Code with the native installer:**
+3. **Install Claude Code with the native installer:**
 
    ```bash
    curl -fsSL https://claude.ai/install.sh | bash
    ```
 
-5. **Verify installs:**
+4. **Verify everything:**
 
    ```bash
    git --version
@@ -74,22 +100,22 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
    claude doctor
    ```
 
-   `claude doctor` runs a self-check — if anything's missing it tells you exactly what.
+   `claude doctor` runs a self-check — if anything's off it tells you exactly what.
 
-6. **Set your Git identity** (first time only):
+5. **Set your Git identity** (first time only):
 
    ```bash
    git config --global user.name "Your Name"
    git config --global user.email "your-email@example.com"
    ```
 
-7. **Log in to GitHub** (browser opens):
+6. **Log in to GitHub** (browser opens):
 
    ```bash
    gh auth login
    ```
 
-   Choose: GitHub.com → HTTPS → Yes → Login with browser. After it finishes:
+   Choose: GitHub.com → HTTPS → Yes → Login with browser. Then verify:
 
    ```bash
    gh auth status
@@ -97,14 +123,14 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
 
    should show ✓ Logged in.
 
-8. **Clone your repo** (replace `your-name` with the slug Kemal gave you — only works *after* you've accepted the invitation from "Before tonight" step 3):
+7. **Clone your repo** (replace `your-name` with your slug from "Before tonight" step 3 — only works *after* you've accepted the invitation):
 
    ```bash
    git clone https://github.com/profkemalaydin/buildschool-your-name.git
    cd buildschool-your-name
    ```
 
-9. **Start Claude Code:**
+8. **Start Claude Code:**
 
    ```bash
    claude
@@ -122,16 +148,27 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
 
 ### 🪟 Windows
 
-1. **Install Git for Windows** — [git-scm.com/download/win](https://git-scm.com/download/win) → run installer (defaults are fine). This gives you Git + Bash-style commands Claude Code can use.
-2. **Install GitHub CLI** — [cli.github.com](https://cli.github.com) → run installer
-3. **Open Windows Terminal or PowerShell** (Start menu → "Terminal"). **Use PowerShell, not Git Bash, for the next step** — Git Bash chokes on the installer.
-4. **Install Claude Code with the native installer (in PowerShell):**
+**Quickest install (Windows 11 with winget):**
+
+```powershell
+winget install Git.Git GitHub.cli
+```
+
+That's both Git and GitHub CLI in one go. If you're on older Windows or `winget` isn't available, install the two manually:
+
+1. **Git for Windows** → [git-scm.com/download/win](https://git-scm.com/download/win) → run installer (defaults are fine). This gives you Git + Bash-style commands.
+2. **GitHub CLI** → [cli.github.com](https://cli.github.com) → run installer
+
+Then:
+
+3. **Open Windows Terminal or PowerShell** (Start menu → "Terminal"). **Use PowerShell, not Git Bash, for the next step** — the installer chokes on Git Bash.
+4. **Install Claude Code with the native installer:**
 
    ```powershell
    irm https://claude.ai/install.ps1 | iex
    ```
 
-5. **Verify installs:**
+5. **Verify everything:**
 
    ```powershell
    git --version
@@ -153,13 +190,13 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
    gh auth login
    ```
 
-   Choose: GitHub.com → HTTPS → Yes → Login with browser. Then check:
+   Choose: GitHub.com → HTTPS → Yes → Login with browser. Then verify:
 
    ```powershell
    gh auth status
    ```
 
-8. **Clone your repo** (replace `your-name` — only works after you accepted the invitation):
+8. **Clone your repo** (replace `your-name` with your slug — only works after you accepted the invitation):
 
    ```powershell
    git clone https://github.com/profkemalaydin/buildschool-your-name.git
@@ -172,7 +209,7 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
    claude
    ```
 
-   Log in when prompted → ready. Open prompts:
+   Log in when prompted. Open prompts:
 
    ```powershell
    type PROMPTS.md
@@ -182,7 +219,7 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
 
 ---
 
-### 🐧 Linux / WSL (Ubuntu / Debian)
+### 🐧 Linux (Ubuntu / Debian)
 
 1. Open a **terminal**
 2. **Install Git + GitHub CLI:**
@@ -198,7 +235,7 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
    curl -fsSL https://claude.ai/install.sh | bash
    ```
 
-4. **Verify installs:**
+4. **Verify everything:**
 
    ```bash
    git --version
@@ -220,13 +257,13 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
    gh auth login
    ```
 
-   Choose: GitHub.com → HTTPS → Yes → Login with browser. Then check:
+   Choose: GitHub.com → HTTPS → Yes → Login with browser. Then:
 
    ```bash
    gh auth status
    ```
 
-7. **Clone your repo** (replace `your-name` — only works after accepting the invitation):
+7. **Clone your repo** (replace `your-name` with your slug — only after accepting the invitation):
 
    ```bash
    git clone https://github.com/profkemalaydin/buildschool-your-name.git
@@ -239,7 +276,7 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
    claude
    ```
 
-   Log in when prompted → ready:
+   Log in when prompted:
 
    ```bash
    cat PROMPTS.md
@@ -249,18 +286,28 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
 
 ---
 
+### 🪟🐧 WSL (Windows Subsystem for Linux)
+
+If you have WSL set up, **run the Linux (Ubuntu) steps above inside your WSL terminal** — not the Windows steps. WSL = Linux on Windows, so the Linux installer is the right one.
+
+If you don't already have WSL working and want to set it up tonight: just use the Windows native path above instead. WSL setup itself takes 15+ minutes — too much for tonight.
+
+---
+
 ## ⚠️ Common setup issues — quick fixes
 
 **`git clone` says "Repository not found"** — usually one of:
-- You didn't accept the GitHub invitation yet → check your email or [github.com/notifications](https://github.com/notifications)
-- You're logged into the wrong GitHub account → `gh auth status` to verify
-- The repo slug was typed incorrectly → double-check the URL Kemal sent
+- You haven't accepted the GitHub invitation yet → check your email or [github.com/notifications](https://github.com/notifications)
+- You're logged into the wrong GitHub account → run `gh auth status` to verify
+- The repo slug was typed incorrectly → it's your first name in lowercase (e.g. `buildschool-sara`)
 
-**`claude` command not found** — installer ran but PATH isn't updated yet:
+**`claude` command not found** — installer ran but your PATH hasn't picked it up yet:
 - Close + reopen your terminal
-- Run `claude doctor` once your terminal is open again
+- If it still doesn't work, run `claude doctor` once your new terminal is open
 
-**`gh auth login` won't open browser** — copy the URL it prints and paste into your browser manually.
+**`gh auth login` won't open browser** — copy the URL it prints, paste into your browser manually.
+
+**Plan B — install fails entirely** — switch to [claude.ai](https://claude.ai) web (Artifacts). You can build the same app in a web chat; Kemal helps you push the final HTML to your repo at the end. You won't fall behind.
 
 **Anything else** — type `@Kemal acil` in the Meet chat. Kemal jumps to your screen-share and fixes it in under 2 minutes.
 
@@ -300,60 +347,7 @@ Click the green **`Use this template`** button at the top of [workshop-starter](
 You have **3 layers of help**:
 
 1. **The prompts themselves** — written to anticipate where you might get stuck
-2. **Workshop AI Coach** — open a *second* Claude chat in your browser (claude.ai, NOT Claude Code) and paste the prompt below. That second Claude knows the workshop structure and unsticks you in 2 minutes:
-
-   ```
-   You are my AI build coach for the SafeScreens "Build Your App in 1 Hour"
-   workshop. Workshop is happening live — June 17, 2026, 21:30–22:30 ET.
-
-   YOUR JOB
-   - Help me ship a working prototype in 60 minutes
-   - When I'm stuck, ask 1-2 clarifying questions first (which block am I in,
-     which tool, what error)
-   - Answers: short, action-oriented, baby-step
-   - "Ship over polish" — working beats perfect
-   - Reject features that won't fit in 60 min ("note for v2")
-   - Tone: encouraging but honest. No fluff.
-
-   WORKSHOP BLOCKS
-   0–3 min   Welcome
-   3–10 min  Frame: why AI now
-   10–15 min Spec your app (1 sentence)
-   15–20 min Claude Code setup
-   20–50 min Build — this is where most help is needed
-   50–57 min Show & Tell
-   57–60 min Close + next
-
-   START WITH
-   "Hey! I'm your workshop coach 👋 Tell me three things:
-    1) What are you building, in one sentence?
-    2) Which block are you in? (e.g. 'spec' or 'build, 15 min in')
-    3) Which tool? (Claude Code, claude.ai web, other)
-   Let's go."
-
-   EMERGENCY ESCAPE
-   If we can't solve it in 5 minutes, tell me to type "@Kemal acil" in
-   the Meet chat — Kemal will jump on directly.
-
-   10 STARTER IDEAS (show if my answer to #1 is blank)
-   1.  Family chore tracker (gamified, kid-friendly)
-   2.  Recipe finder (paste ingredients, get meal idea)
-   3.  Daily Quran/Bible verse + reflection
-   4.  Spelling/vocab quiz
-   5.  Habit streak counter
-   6.  Family chore wheel (random assignment)
-   7.  Newsletter draft assistant (TR + EN)
-   8.  Gratitude journal
-   9.  Water intake reminder
-   10. Kids story maker (pick hero + plot)
-
-   BACKGROUND
-   Workshop is a SafeScreens fundraiser — proceeds support children's
-   screen-health initiatives. https://build.safescreensinitiative.org
-
-   Now, ask me your first three questions.
-   ```
-
+2. **Workshop AI Coach** — a second Claude chat that knows the workshop structure and unsticks you in 2 minutes → **[Open COACH.md and follow the instructions](./COACH.md)**
 3. **Type `@Kemal acil` in the Meet chat** — Kemal jumps into your screen-share and helps personally
 
 ---
@@ -364,6 +358,7 @@ You have **3 layers of help**:
 |---|---|
 | `index.html` | Working "hello, your app" page with Tailwind CSS pre-wired, localStorage helpers ready |
 | `PROMPTS.md` | The 6-step Claude Code conversation guide |
+| `COACH.md` | The Workshop AI Coach prompt (your second Claude chat) |
 | `LICENSE` | MIT — yours to keep |
 
 The starter is **deliberately minimal** so Claude has room to make it yours.

@@ -136,13 +136,10 @@ Pick your operating system. Each path ends the same way: Claude Code running in 
    claude
    ```
 
-   Log in with your Claude account when prompted. You're ready → open the prompts file:
+   Log in with your Claude account when prompted. You're ready.
 
-   ```bash
-   cat PROMPTS.md
-   ```
-
-   (or if you have VS Code: `code .` to open the whole folder)
+9. **Open the prompts in your browser** (easier to read than in terminal):
+   → **[PROMPTS.md](https://github.com/profkemalaydin/workshop-starter/blob/main/PROMPTS.md)** — paste each step into Claude Code, in order.
 
 ---
 
@@ -209,13 +206,10 @@ Then:
    claude
    ```
 
-   Log in when prompted. Open prompts:
+   Log in when prompted. You're ready.
 
-   ```powershell
-   type PROMPTS.md
-   ```
-
-   (or if you have VS Code: `code .`)
+10. **Open the prompts in your browser** (easier to read than in terminal):
+    → **[PROMPTS.md](https://github.com/profkemalaydin/workshop-starter/blob/main/PROMPTS.md)** — paste each step into Claude Code, in order.
 
 ---
 
@@ -276,13 +270,10 @@ Then:
    claude
    ```
 
-   Log in when prompted:
+   Log in when prompted. You're ready.
 
-   ```bash
-   cat PROMPTS.md
-   ```
-
-   (or `code .` for VS Code)
+9. **Open the prompts in your browser** (easier to read than in terminal):
+   → **[PROMPTS.md](https://github.com/profkemalaydin/workshop-starter/blob/main/PROMPTS.md)** — paste each step into Claude Code, in order.
 
 ---
 

@@ -356,6 +356,19 @@ The starter is **deliberately minimal** so Claude has room to make it yours.
 
 ---
 
+## 💛 About SafeScreens Initiative
+
+This workshop is a **SafeScreens Initiative fundraiser** — every supporter funds the next round of kids learning to **make instead of just consume**. SafeScreens is a 501(c)(3); contributions are tax-deductible.
+
+- **Mission:** turn children from passive screen-consumers into active creators
+- **How tonight helps:** workshop proceeds go directly to youth programs (Build Lab, Family Lab, Library)
+- **Support:** [build.safescreensinitiative.org](https://build.safescreensinitiative.org) · $25 / $100 / $500 / custom
+- **Next workshop:** Studio Cohort 1, Friday June 27 (4 weeks, Tier 1 → Tier 2)
+
+If tonight helped you, share it with one person who'd build something too. That's the funnel that funds the mission.
+
+---
+
 ## 📝 License
 
 MIT — fork it, remix it, build a business with it. Yours to keep.

@@ -179,6 +179,19 @@ START WITH PHASE 0 NOW. Don't skip ahead.
 
 ---
 
+## 💛 Pay it forward
+
+This workshop is a **SafeScreens Initiative fundraiser** — every donation funds the next round of kids learning to **make** instead of just consume.
+
+If tonight helped you, share **[build.safescreensinitiative.org](https://build.safescreensinitiative.org)** with one friend who would build something too. Or join the next tier:
+
+- **Studio Cohort 1** (4 weeks · starts Friday June 27) — take your app from Tier 1 to Tier 2 (real LLM-powered, your own domain)
+- **One-time donation** — $25, $100, $500, or your choice. Tax-deductible under SafeScreens' 501(c)(3) status.
+
+Children grow into who they're surrounded by. Surround them with creators.
+
+---
+
 ## 🆘 Stuck mid-build?
 
 - **Open [COACH.md](./COACH.md)** — the Workshop AI Coach (a separate Claude chat in your browser) knows the workshop format and unsticks you in 2 minutes

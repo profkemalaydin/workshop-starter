@@ -4,6 +4,8 @@
 
 A starter from the **AI Build Workshop** by SafeScreens Initiative. Customize this empty shell into anything — habit tracker, family game, study tool, journal — with the help of Claude Code in your terminal.
 
+> 💛 **Don't worry if something fails during setup.** The goal isn't to finish alone — it's to get everyone into the repo and run Claude Code together. Kemal screen-shares every step and unblocks you live.
+
 ---
 
 ## 👋 What this is
@@ -21,50 +23,26 @@ The structure is the same; **your idea makes it yours**.
 
 ---
 
-## ✅ Before tonight — 3 things (10 min total)
+## ✅ Before tonight — 6 things (10 min total)
 
-Do these **before the workshop starts** so the live session can focus on building, not configuring:
+Knock these out before the workshop starts so the live session can focus on building, not configuring:
 
-### 1. Get a GitHub account (2 min)
-
-Skip if you already have one. Otherwise:
-
-1. Go to **[github.com/signup](https://github.com/signup)**
-2. Use any email (gmail works fine)
-3. Pick a username — choose something you like, it becomes part of your URL
-4. Verify your email
-
-### 2. Add yourself to the workshop sign-up sheet (1 min)
-
-Open this Google Sheet (anyone with the link can edit — no sign-in needed):
-
-**👉 [Workshop sign-up sheet](https://docs.google.com/spreadsheets/d/1lVzVVg_3B4jm5zGTbv3aS50Frn4lhhhoCe8NXc-hxaY/edit)**
-
-Add a row with:
-- **Your name**
-- **Your GitHub username**
-- **One-sentence app idea** (it's okay if it changes — just write whatever you have now)
-
-Once your row is there, Kemal will:
-- Create your personal repo at `github.com/profkemalaydin/buildschool-yourname`
-- Add you as a **collaborator** with push access (so you can save your changes)
-- Fill in the **Repo URL** column on the sheet — that's the link you'll clone later
-
-### 3. Accept the collaboration invitation (1 min)
-
-After Kemal creates your repo, you'll get a **GitHub email** with a "View invitation" button — click it and accept. Without this, you can't push code to your repo.
-
-You can also accept directly at: **[github.com/notifications](https://github.com/notifications)**
-
-✅ Done — you're set up before the live session even starts.
+1. **Create or confirm your GitHub account** — [github.com/signup](https://github.com/signup) (2 min if you don't have one)
+2. **Add yourself to the workshop sign-up sheet** — name + GitHub username + one-sentence idea → **[Workshop sign-up sheet](https://docs.google.com/spreadsheets/d/1lVzVVg_3B4jm5zGTbv3aS50Frn4lhhhoCe8NXc-hxaY/edit)**
+3. **Accept the GitHub repository invitation** Kemal will send to your email (the repo is `github.com/profkemalaydin/buildschool-yourname`). Without accepting, you can't push code.
+4. **Create or confirm a Claude account** that has Claude Code access. **Claude Code requires Pro, Max, Team, Enterprise, or Console** — the free Claude.ai plan does **not** include Claude Code. Check or upgrade at [claude.ai](https://claude.ai).
+5. **Bring your laptop charger** — an hour of build + AI streaming drains a battery fast.
+6. **Use Chrome or another modern browser** — for the GitHub login flow and Claude streaming UI.
 
 ---
 
 ## 🛠 Setup tonight — Install Claude Code (15-20 min, Kemal walks through live)
 
-We'll do this together in the first 20 minutes of the workshop. Don't worry about doing it perfectly alone — Kemal screen-shares and helps.
+Pick your operating system. Each path ends the same way: Claude Code running in your repo folder.
 
-Pick your operating system. All paths end the same way: Claude Code running in your repo folder.
+> Anthropic's recommended path for Claude Code is the **native installer** — much cleaner than npm. We'll use that below.
+
+---
 
 ### 🍎 macOS
 
@@ -75,126 +53,216 @@ Pick your operating system. All paths end the same way: Claude Code running in y
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
 
-3. **Install Node.js, Git, GitHub CLI:**
+3. **Install Git + GitHub CLI** (Node.js is optional — only needed for our project later):
 
    ```bash
-   brew install node git gh
+   brew install git gh
    ```
 
-4. **Install Claude Code:**
+4. **Install Claude Code with the native installer:**
 
    ```bash
-   npm install -g @anthropic-ai/claude-code
+   curl -fsSL https://claude.ai/install.sh | bash
    ```
 
-5. **Log in to GitHub** (browser will open):
+5. **Verify installs:**
+
+   ```bash
+   git --version
+   gh --version
+   claude --version
+   claude doctor
+   ```
+
+   `claude doctor` runs a self-check — if anything's missing it tells you exactly what.
+
+6. **Set your Git identity** (first time only):
+
+   ```bash
+   git config --global user.name "Your Name"
+   git config --global user.email "your-email@example.com"
+   ```
+
+7. **Log in to GitHub** (browser opens):
 
    ```bash
    gh auth login
    ```
 
-   Choose: GitHub.com → HTTPS → Yes → Login with browser.
+   Choose: GitHub.com → HTTPS → Yes → Login with browser. After it finishes:
 
-6. **Clone your repo** (replace `your-name` with the slug Kemal gave you — only works after you've accepted the invitation from "Before tonight" step 3):
+   ```bash
+   gh auth status
+   ```
+
+   should show ✓ Logged in.
+
+8. **Clone your repo** (replace `your-name` with the slug Kemal gave you — only works *after* you've accepted the invitation from "Before tonight" step 3):
 
    ```bash
    git clone https://github.com/profkemalaydin/buildschool-your-name.git
    cd buildschool-your-name
    ```
 
-7. **Start Claude Code:**
+9. **Start Claude Code:**
 
    ```bash
    claude
    ```
 
-   Log in with your Claude account when prompted. You're ready → jump to [PROMPTS.md](./PROMPTS.md).
+   Log in with your Claude account when prompted. You're ready → open the prompts file:
+
+   ```bash
+   cat PROMPTS.md
+   ```
+
+   (or if you have VS Code: `code .` to open the whole folder)
 
 ---
 
 ### 🪟 Windows
 
-1. **Install Node.js LTS** — download from [nodejs.org](https://nodejs.org) → run installer (defaults are fine)
-2. **Install Git** — download from [git-scm.com](https://git-scm.com/download/win) → run installer (defaults are fine)
-3. **Install GitHub CLI** — download from [cli.github.com](https://cli.github.com) → run installer
-4. **Open PowerShell or Windows Terminal** (Start menu → search "Terminal")
-5. **Install Claude Code:**
+1. **Install Git for Windows** — [git-scm.com/download/win](https://git-scm.com/download/win) → run installer (defaults are fine). This gives you Git + Bash-style commands Claude Code can use.
+2. **Install GitHub CLI** — [cli.github.com](https://cli.github.com) → run installer
+3. **Open Windows Terminal or PowerShell** (Start menu → "Terminal"). **Use PowerShell, not Git Bash, for the next step** — Git Bash chokes on the installer.
+4. **Install Claude Code with the native installer (in PowerShell):**
 
    ```powershell
-   npm install -g @anthropic-ai/claude-code
+   irm https://claude.ai/install.ps1 | iex
    ```
 
-6. **Log in to GitHub** (browser will open):
+5. **Verify installs:**
+
+   ```powershell
+   git --version
+   gh --version
+   claude --version
+   claude doctor
+   ```
+
+6. **Set your Git identity** (first time only):
+
+   ```powershell
+   git config --global user.name "Your Name"
+   git config --global user.email "your-email@example.com"
+   ```
+
+7. **Log in to GitHub** (browser opens):
 
    ```powershell
    gh auth login
    ```
 
-   Choose: GitHub.com → HTTPS → Yes → Login with browser.
-
-7. **Clone your repo** (replace `your-name` with the slug Kemal gave you — only works after you've accepted the invitation from "Before tonight" step 3):
+   Choose: GitHub.com → HTTPS → Yes → Login with browser. Then check:
 
    ```powershell
+   gh auth status
+   ```
+
+8. **Clone your repo** (replace `your-name` — only works after you accepted the invitation):
+
+   ```powershell
+   git clone https://github.com/profkemalaydin/buildschool-your-name.git
+   cd buildschool-your-name
+   ```
+
+9. **Start Claude Code:**
+
+   ```powershell
+   claude
+   ```
+
+   Log in when prompted → ready. Open prompts:
+
+   ```powershell
+   type PROMPTS.md
+   ```
+
+   (or if you have VS Code: `code .`)
+
+---
+
+### 🐧 Linux / WSL (Ubuntu / Debian)
+
+1. Open a **terminal**
+2. **Install Git + GitHub CLI:**
+
+   ```bash
+   sudo apt update
+   sudo apt install -y git gh
+   ```
+
+3. **Install Claude Code with the native installer:**
+
+   ```bash
+   curl -fsSL https://claude.ai/install.sh | bash
+   ```
+
+4. **Verify installs:**
+
+   ```bash
+   git --version
+   gh --version
+   claude --version
+   claude doctor
+   ```
+
+5. **Set your Git identity** (first time only):
+
+   ```bash
+   git config --global user.name "Your Name"
+   git config --global user.email "your-email@example.com"
+   ```
+
+6. **Log in to GitHub** (browser opens):
+
+   ```bash
+   gh auth login
+   ```
+
+   Choose: GitHub.com → HTTPS → Yes → Login with browser. Then check:
+
+   ```bash
+   gh auth status
+   ```
+
+7. **Clone your repo** (replace `your-name` — only works after accepting the invitation):
+
+   ```bash
    git clone https://github.com/profkemalaydin/buildschool-your-name.git
    cd buildschool-your-name
    ```
 
 8. **Start Claude Code:**
 
-   ```powershell
+   ```bash
    claude
    ```
 
-   Log in when prompted → ready → jump to [PROMPTS.md](./PROMPTS.md).
+   Log in when prompted → ready:
+
+   ```bash
+   cat PROMPTS.md
+   ```
+
+   (or `code .` for VS Code)
 
 ---
 
-### 🐧 Linux (Ubuntu / Debian / WSL)
+## ⚠️ Common setup issues — quick fixes
 
-1. Open a **terminal**
-2. **Install Node.js + npm + Git:**
+**`git clone` says "Repository not found"** — usually one of:
+- You didn't accept the GitHub invitation yet → check your email or [github.com/notifications](https://github.com/notifications)
+- You're logged into the wrong GitHub account → `gh auth status` to verify
+- The repo slug was typed incorrectly → double-check the URL Kemal sent
 
-   ```bash
-   sudo apt update
-   sudo apt install -y nodejs npm git
-   ```
+**`claude` command not found** — installer ran but PATH isn't updated yet:
+- Close + reopen your terminal
+- Run `claude doctor` once your terminal is open again
 
-   *(If `nodejs --version` shows older than 18, use NodeSource: `curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt install -y nodejs`)*
+**`gh auth login` won't open browser** — copy the URL it prints and paste into your browser manually.
 
-3. **Install GitHub CLI:**
-
-   ```bash
-   sudo apt install -y gh
-   ```
-
-4. **Install Claude Code:**
-
-   ```bash
-   sudo npm install -g @anthropic-ai/claude-code
-   ```
-
-5. **Log in to GitHub** (browser will open):
-
-   ```bash
-   gh auth login
-   ```
-
-   Choose: GitHub.com → HTTPS → Yes → Login with browser.
-
-6. **Clone your repo** (replace `your-name` with the slug Kemal gave you — only works after you've accepted the invitation from "Before tonight" step 3):
-
-   ```bash
-   git clone https://github.com/profkemalaydin/buildschool-your-name.git
-   cd buildschool-your-name
-   ```
-
-7. **Start Claude Code:**
-
-   ```bash
-   claude
-   ```
-
-   Log in when prompted → ready → jump to [PROMPTS.md](./PROMPTS.md).
+**Anything else** — type `@Kemal acil` in the Meet chat. Kemal jumps to your screen-share and fixes it in under 2 minutes.
 
 ---
 

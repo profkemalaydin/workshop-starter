@@ -308,7 +308,7 @@ If you don't already have WSL working and want to set it up tonight: just use th
 
 1. **You and Kemal are both collaborators** on your repo. You push changes; Kemal handles the Cloudflare deploy.
 2. **Claude Code runs in your repo's folder** — it can directly read and edit your files as you talk to it.
-3. **Open [PROMPTS.md](./PROMPTS.md)** — paste each prompt into Claude Code, in order.
+3. **Open [PROMPTS.md](./PROMPTS.md)** — paste **one** big prompt into Claude Code. After that, just answer Claude's questions as they come.
 4. **By Step 4** you'll have a working app. **By Step 6** it's polished.
 5. **When you're happy:** tell Claude Code *"Commit and push my changes"* — it does it.
 6. **Kemal sees your push and deploys** to `https://buildschool-yourname.pages.dev` — link by email.
